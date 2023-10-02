@@ -39,12 +39,19 @@ impl Component for Counter {
 
     fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
-            <div>
-                <button onclick={ctx.link().callback(|_| Self::Message::Decrement)}>{ "-1" }</button>
-                <p>{ self.value }</p>
-                <button onclick={ctx.link().callback(|_| Self::Message::Increment)}>{ "+1" }</button>
-                <br />
-                <button onclick={ctx.link().callback(|_| Self::Message::Reset)}>{ "Reset" }</button>
+            <div class="grid items-center w-full h-full grid-cols-3 gap-4 justify-items-center">
+                <div class="w-full h-full col-span-1 text-5xl">
+                    <button class="w-full h-full p-4 bg-red-200 rounded-md" onclick={ctx.link().callback(|_| Self::Message::Decrement)}>{ "-1" }</button>
+                </div>
+                <div class="col-span-1 text-9xl">
+                    <p>{ self.value }</p>
+                </div>
+                <div class="w-full h-full col-span-1 text-5xl">
+                    <button class="w-full h-full p-4 bg-green-200 rounded-md" onclick={ctx.link().callback(|_| Self::Message::Increment)}>{ "+1" }</button>
+                </div>
+                <div class="w-full h-full col-span-3 text-5xl">
+                    <button class="w-full h-full p-4 bg-yellow-200 rounded-md" onclick={ctx.link().callback(|_| Self::Message::Reset)}>{ "Reset" }</button>
+                </div>
             </div>
         }
     }

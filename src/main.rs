@@ -6,7 +6,7 @@ use crate::counter::Counter;
 #[function_component]
 fn App() -> Html {
     html! {
-        <div>
+        <div class="w-screen h-screen">
             <Counter value={5} />
         </div>
     }

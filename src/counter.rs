@@ -50,7 +50,7 @@ impl Component for Counter {
                     <button class="w-full h-full p-4 bg-green-200 rounded-md" onclick={ctx.link().callback(|_| Self::Message::Increment)}>{ "+1" }</button>
                 </div>
                 <div class="w-full h-full col-span-3 text-5xl">
-                    <button class="w-full h-full p-4 bg-yellow-200 rounded-md" onclick={ctx.link().callback(|_| Self::Message::Reset)}>{ "Reset" }</button>
+                    <button class="w-full h-full p-4 bg-yellow-200 rounded-md disabled:bg-neutral-200 disabled:text-gray-600 disabled:cursor-not-allowed" onclick={ctx.link().callback(|_| Self::Message::Reset)} disabled={self.value == ctx.props().value}>{ "Reset" }</button>
                 </div>
             </div>
         }

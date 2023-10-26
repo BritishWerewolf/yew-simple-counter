@@ -1,6 +1,9 @@
 # Simple Rust Counter App
 A very simple web app built in Rust that utilises web assembly to send messages to a reactive component.
 
+**[Live demo](https://play.yew.rs/?shared=3FC7zkQOm6pB4KV0rchh)**  
+_Note_: The styles don't look perfect on the demo due to the hacky method to insert them into the Yew Playground.
+
 ## Usage
 The initial value of the counter can be set in the `main.rs` file.  
 To use the default value, simply remove the property.
